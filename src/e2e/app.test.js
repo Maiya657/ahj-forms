@@ -40,10 +40,6 @@ describe("Tooltip form test initiation", () => {
 
       const element = await page.waitForSelector(".popover", { hidden: true });
       expect(element).toBeNull();
-
-      // const popover = await page.$(".popover");
-      // (await popover) === null;
-      // await expect(page).not.toMatchElement(".popover");
     });
 
     afterAll(async () => {
