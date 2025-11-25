@@ -22,6 +22,12 @@ export class Tooltip {
 
     if (!tooltip) {
       element.insertAdjacentHTML("beforebegin", tooltipEl);
+
+      const popover = document.querySelector(".popover");
+      const { top, left } = element.getBoundingClientRect();
+
+      popover.style.top = `${top - popover.offsetHeight - 5}px`;
+      popover.style.left = `${left + element.offsetWidth / 2 - popover.offsetWidth / 2}px`;
     } else {
       tooltip.remove();
     }
